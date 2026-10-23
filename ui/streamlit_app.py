@@ -7,17 +7,53 @@ That is the point of having built the API: the UI is a client like any other, an
 nothing here can drift from what an external caller would get.
 
 The UI consumes `/ask/stream`, so sources appear before the answer starts writing.
+
+With `EMBED_API=1` (single-process hosts like Streamlit Community Cloud) the UI
+indexes the corpus and starts the same FastAPI app on localhost in a background
+thread, then talks to it over HTTP exactly as before.
 """
 
 from __future__ import annotations
 
 import json
 import os
+import subprocess
+import sys
+import time
+from pathlib import Path
 
 import httpx
 import streamlit as st
 
 API_URL = os.environ.get("RAG_API_URL", "http://localhost:8000")
+
+
+@st.cache_resource(show_spinner="Indexing the documents (first visit only)...")
+def start_embedded_api() -> str:
+    """Run ingest + the API as child processes, once per server.
+
+    Separate processes, not threads: the pipeline hangs when run on a thread
+    inside Streamlit's process, and a subprocess is exactly what `make serve` runs.
+    """
+    root = Path(__file__).resolve().parent.parent
+    # Idempotent (unchanged files are skipped); a failure shows up in /healthz.
+    subprocess.run([sys.executable, "-m", "app.cli", "ingest"], cwd=root, check=False)
+    subprocess.Popen(
+        [sys.executable, "-m", "uvicorn", "app.api:app", "--host", "127.0.0.1",
+         "--port", "8000"],
+        cwd=root,
+    )
+    for _ in range(100):
+        try:
+            httpx.get("http://127.0.0.1:8000/healthz", timeout=1.0)
+            break
+        except httpx.HTTPError:
+            time.sleep(0.2)
+    return "http://127.0.0.1:8000"
+
+
+if os.environ.get("EMBED_API") == "1":
+    API_URL = start_embedded_api()
 REQUEST_TIMEOUT = httpx.Timeout(connect=5.0, read=180.0, write=10.0, pool=5.0)
 
 st.set_page_config(page_title="Citewise", page_icon="📎", layout="centered")

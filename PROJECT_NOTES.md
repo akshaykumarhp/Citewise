@@ -6,7 +6,8 @@
 
 **Last updated:** 2026-10-23
 **Current phase:** Phases 4–5 complete, Phase 6 partial — eval harness, hardening, deploy
-**Verified:** 40/40 unit tests · 107/107 offline smoke checks (on Chroma *and* pgvector) · ruff clean · Docker image boots
+**Measured (demo corpus, hybrid + LLM rerank, flash-lite):** hit-rate@5 1.00 · MRR 0.98 · nDCG 0.96 · abstention 0.90 · false refusals 0.10 — gates pass
+**Verified:** 41/41 unit tests · 107/107 offline smoke checks (on Chroma *and* pgvector) · ruff clean · Docker image boots
 
 ---
 
@@ -204,6 +205,7 @@ Decisions with reasoning, so future-you doesn't relitigate them.
 | **D33** | **The requery loop is bounded and re-graded** | A loop that retries until something passes would launder weak context into an answer. Every retry must clear the same grader; the attempt counter ends it. |
 | **D34** | **Cache only history-free questions, clear on ingest** | With history the same words can mean a different question. Any ingest can change any answer. |
 | **D35** | **One Docker image for the Space and for compose** | The demo and the production-shaped stack run the same artifact; only the command and env differ. |
+| **D38** | **`EMBED_API=1`: the UI launches ingest + the API as child processes** | Free single-process hosts (Streamlit Community Cloud) can't run two services. Child processes, not threads: the pipeline hung when run on a thread inside Streamlit's process, and a subprocess is exactly what `make serve` runs. The UI still talks HTTP (D18). |
 | **D37** | **Default chat model is `gemini-3.1-flash-lite`** | On the free tier `gemini-3.5-flash` allows 20 requests/day — one eval run, or a few minutes of a public demo. Each question costs 2–3 calls (rerank + generate, + rewrite). Flash-lite's quota is what makes the demo viable; switch back via `CHAT_MODEL` on a paid key. |
 | **D36** | **The UI forwards the visitor IP to the API** | Behind Streamlit every visitor is 127.0.0.1, so a per-IP limit would be one global limit. |
 

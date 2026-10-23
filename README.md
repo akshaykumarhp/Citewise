@@ -66,7 +66,16 @@ make up           # docker compose: postgres+pgvector, API on :8000, UI on :8501
 docker compose exec api python -m app.cli ingest
 ```
 
-Deploy the all-in-one image to a Hugging Face Space (the API key goes in as a Space
+Deploy for free on [Streamlit Community Cloud](https://share.streamlit.io): new app →
+this repo, branch `main`, main file `ui/streamlit_app.py`, Python 3.12, and these secrets:
+
+```toml
+GOOGLE_API_KEY = "..."
+DATA_DIR = "corpus"
+EMBED_API = "1"     # the UI starts the API itself - one process on that host
+```
+
+Or deploy the all-in-one image to a Hugging Face Space (Docker Spaces need HF PRO) (the API key goes in as a Space
 secret, never into the repo):
 
 ```bash
