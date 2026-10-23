@@ -1,0 +1,24 @@
+# Secrets
+.env
+
+# Your documents and the index built from them
+data/raw/*
+!data/raw/.gitkeep
+data/chroma/
+data/manifest.json
+data/lexical_index.json
+eval/reports/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

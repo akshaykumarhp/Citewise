@@ -1,0 +1,40 @@
+{"id": "leave-1", "question": "How many days of paid annual leave do full-time employees get?", "sources": ["employee_handbook.md"], "answer": "24 days per calendar year, accruing 2 days per month."}
+{"id": "leave-2", "question": "Can I carry unused vacation days into next year?", "sources": ["employee_handbook.md"], "answer": "Yes, up to 5 days, which expire if not used by 31 March."}
+{"id": "leave-3", "question": "How far in advance must I request a three-week holiday?", "sources": ["employee_handbook.md"], "answer": "At least 30 days in advance (requests over 10 consecutive working days)."}
+{"id": "leave-4", "question": "Do the days between Christmas and New Year count against my leave?", "sources": ["employee_handbook.md"], "answer": "No, the office closure from 24 December to 1 January is granted in addition to annual leave."}
+{"id": "hr-1", "question": "How long is the probation period?", "sources": ["employee_handbook.md"], "answer": "90 calendar days."}
+{"id": "hr-2", "question": "How much parental leave does the secondary caregiver get?", "sources": ["employee_handbook.md"], "answer": "6 weeks fully paid, within 12 months of birth or adoption."}
+{"id": "hr-3", "question": "How many days a week can I work from home?", "sources": ["employee_handbook.md"], "answer": "Up to 3 days per week."}
+{"id": "hr-4", "question": "What is the home office stipend?", "sources": ["employee_handbook.md"], "answer": "A one-off 750 EUR in the first month."}
+{"id": "hr-5", "question": "When do salary increases take effect?", "sources": ["employee_handbook.md"], "answer": "On 1 January, following the October review cycle."}
+{"id": "hr-6", "question": "When do I need a doctor's note for sick leave?", "sources": ["employee_handbook.md"], "answer": "For absences longer than 5 consecutive working days."}
+{"id": "sec-1", "question": "Since when is Halcyon ISO-27001 certified?", "sources": ["security_policy.md"], "answer": "Since March 2023."}
+{"id": "sec-2", "question": "What is the minimum password length?", "sources": ["security_policy.md"], "answer": "14 characters."}
+{"id": "sec-3", "question": "Can I use SMS codes as a second factor for production admin access?", "sources": ["security_policy.md"], "answer": "No; hardware security keys are required and SMS is not accepted."}
+{"id": "sec-4", "question": "How quickly must a security incident be reported?", "sources": ["security_policy.md"], "answer": "Within 1 hour of discovery."}
+{"id": "sec-5", "question": "What format do incident identifiers use?", "sources": ["security_policy.md"], "answer": "SEC-INC-YYYY-NNN."}
+{"id": "sec-6", "question": "How long is customer flight telemetry kept?", "sources": ["security_policy.md"], "answer": "24 months, then deleted automatically."}
+{"id": "sec-7", "question": "Can I store restricted data on my laptop?", "sources": ["security_policy.md"], "answer": "No, restricted data may only be processed inside the Restricted VPC."}
+{"id": "trv-1", "question": "When am I allowed to fly business class?", "sources": ["travel_and_expenses.md"], "answer": "Only with VP approval and for flights longer than 10 hours."}
+{"id": "trv-2", "question": "What is the hotel limit in London?", "sources": ["travel_and_expenses.md"], "answer": "260 EUR per night."}
+{"id": "trv-3", "question": "What is the per diem for international trips?", "sources": ["travel_and_expenses.md"], "answer": "75 EUR per day."}
+{"id": "trv-4", "question": "What is the deadline for submitting expenses?", "sources": ["travel_and_expenses.md"], "answer": "Within 30 days of purchase; after 90 days they are not reimbursed."}
+{"id": "trv-5", "question": "Who has to approve a 2,000 EUR expense?", "sources": ["travel_and_expenses.md"], "answer": "The department head (500 to 5,000 EUR)."}
+{"id": "trv-6", "question": "How much is mileage reimbursed for using my own car?", "sources": ["travel_and_expenses.md"], "answer": "0.30 EUR per kilometre."}
+{"id": "it-1", "question": "What does ERR-4021 mean and how do I fix it?", "sources": ["it_runbook.md"], "answer": "VPN device certificate expired; renew it in the Self-Service app and restart TunnelGate."}
+{"id": "it-2", "question": "How do I resolve ERR-5003?", "sources": ["it_runbook.md"], "answer": "Build cache quota exceeded; run hcli cache prune --older-than 14d or request a quota increase."}
+{"id": "it-3", "question": "How often are laptops replaced?", "sources": ["it_runbook.md"], "answer": "Every 3 years."}
+{"id": "it-4", "question": "How long are laptop backups kept?", "sources": ["it_runbook.md"], "answer": "30 days."}
+{"id": "kes-1", "question": "What is the flight time of the K-200 with a full payload?", "sources": ["kestrel_k200_faq.md"], "answer": "31 minutes with the 1.2 kg payload (42 minutes without)."}
+{"id": "kes-2", "question": "Which firmware version is current for the Kestrel K-200?", "sources": ["kestrel_k200_faq.md"], "answer": "v3.8.1, released August 2025."}
+{"id": "kes-3", "question": "What wind speeds can the K-200 handle?", "sources": ["kestrel_k200_faq.md"], "answer": "Sustained winds up to 12 m/s, gusts up to 15 m/s."}
+{"id": "no-1", "question": "How many sick days per year are employees entitled to?", "sources": [], "answer": null}
+{"id": "no-2", "question": "Which dental insurance provider does Halcyon use?", "sources": [], "answer": null}
+{"id": "no-3", "question": "What is Halcyon Robotics' stock ticker?", "sources": [], "answer": null}
+{"id": "no-4", "question": "Is the Kestrel K-200 waterproof, and what is its IP rating?", "sources": [], "answer": null}
+{"id": "no-5", "question": "What does error code ERR-6100 mean?", "sources": [], "answer": null}
+{"id": "no-6", "question": "How much does the Kestrel Care plan cost?", "sources": [], "answer": null}
+{"id": "no-7", "question": "What is the company pension contribution?", "sources": [], "answer": null}
+{"id": "no-8", "question": "Who is the CEO of Halcyon Robotics?", "sources": [], "answer": null}
+{"id": "no-9", "question": "What is the per diem for a trip to the Moon office?", "sources": [], "answer": null}
+{"id": "no-10", "question": "How many employees does Halcyon Robotics have?", "sources": [], "answer": null}

@@ -1,0 +1,5 @@
+line-length = 100
+
+[lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E741"]  # `l` for the lexical column reads fine next to `d`
