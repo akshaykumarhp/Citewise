@@ -7,9 +7,6 @@ cited to the page, and honest when the answer isn't there.**
 
 Built with LangChain 1.x + LangGraph, Gemini, Chroma / pgvector, FastAPI and Streamlit.
 
-**Live demo:** https://huggingface.co/spaces/akshaykumarhp/citewise (over a fictional company's documents; ask it something
-it can't know and watch it refuse)
-
 ```
 $ python -m app.cli ask "how many vacation days do I accrue?"
 
